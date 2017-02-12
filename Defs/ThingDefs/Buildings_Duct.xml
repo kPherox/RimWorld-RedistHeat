@@ -134,6 +134,7 @@
             <li Class="RedistHeat.CompAirTraderProperties">
                 <compClass>RedistHeat.CompAirTrader</compClass>
                 <transferRate>0.1</transferRate>
+                <units>-4</units>
             </li>
         </comps>
         <placeWorkers>
@@ -168,6 +169,7 @@
             <li Class="RedistHeat.CompAirTraderProperties">
                 <compClass>RedistHeat.CompAirTrader</compClass>
                 <transferRate>0.15</transferRate>
+                <units>-4</units>
             </li>
             <li Class="CompProperties_TempControl">
                 <compClass>CompTempControl</compClass>
@@ -205,6 +207,7 @@
             <li Class="RedistHeat.CompAirTraderProperties">
                 <compClass>RedistHeat.CompAirTrader</compClass>
                 <transferRate>0.9</transferRate>
+                <units>16</units>
             </li>
         </comps>
         <placeWorkers>
@@ -212,11 +215,11 @@
         </placeWorkers>
     </ThingDef>
 
-    <ThingDef ParentName="DuctCompBase">
-        <defName>RedistHeat_DuctCooler</defName>
-        <thingClass>RedistHeat.Building_DuctCooler</thingClass>
-        <label>duct cooler</label>
-        <description>A duct building that cools air within its network. Generates a lot of heat.</description>
+	<ThingDef ParentName="DuctCompBase">
+        <defName>RedistHeat_MultipurposeCooler</defName>
+        <thingClass>RedistHeat.Building_MultipurposeCooler</thingClass>
+        <label>multipurpose cooler</label>
+        <description>A building that can cool either the room or the network.</description>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <texPath>Things/Building/AirNet/DuctCooler</texPath>
@@ -234,6 +237,9 @@
             <li Class="RedistHeat.CompAirTraderProperties">
                 <compClass>RedistHeat.CompAirTrader</compClass>
             </li>
+			<li Class="RedistHeat.CompDuctSwitchableProperties">
+                <compClass>RedistHeat.CompDuctSwitchable</compClass>
+            </li>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <soundPowerOn>PowerOnSmall</soundPowerOn>
@@ -247,7 +253,7 @@
 			<li Class="CompProperties_Breakdownable"/>
         </comps>
         <placeWorkers>
-            <li>RedistHeat.PlaceWorker_DuctCooler</li>
+            <li>RedistHeat.PlaceWorker_MultipurposeCooler</li>
         </placeWorkers>
         <altitudeLayer>Building</altitudeLayer>
         <blockLight>true</blockLight>
